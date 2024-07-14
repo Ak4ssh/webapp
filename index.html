@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZMusic</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <link rel="stylesheet" href="style.css?v=35" />
+    <script src="extra.js?v=35"></script>
+    <script src="socket_io.js?v=35"></script>
+    <script src="script.js?v=35"></script>
+    <script src="telegram.js?v=35"></script>
+</head>
+
+
+<div id="join-div" class="join-div" style="display: flex;">
+    <button id="join-btn" class="glow-button">Join Group Music</button>
+</div>
+
+<div id="loader" class="loader" style="display: none;">
+    <img src="load.gif" alt="Loading..." height="100px" width="100px">
+</div>
+
+<div id="no-song" class="container" style="display: none;">
+    <h3>No Song Is Playing Currently, Use /play CMD</h3>
+</div>
+
+<div id="main-container" class="main-container" style="display: none;">
+    <div id="bg-container" class="bg-container">
+        <img id="bg-image" src="" onload="onPosterLoad()">
+    </div>
+    <div id="overlay-img" class="overlay-img">
+    </div>
+    <div id="song-details" class="song-details">
+        <p id="song-title" class="title"></p>
+
+        <audio id="player">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="time-div">
+            <p id="current-time"></p>
+            <p id="total-time"></p>
+        </div>
+
+    </div>
+
+    <div id="queue-div" class="queue-div" style="display: none;">
+        <p class="queue-header">Queued Songs</p>
+
+        <div id="song-list" class="song-list">
+
+        </div>
+    </div>
+
+</div>
+
+<!-- <body>
+        <div class="header">
+            <div class="tg-icon">
+                <img height="40px" width="40px" src="user.jpg">
+            </div>
+        </div>
+    <div id="container" class="container" style="display: flex;">
+        <h3>Currently Playing</h3>
+        <div>
+            <img id="conver-img" src="https://img.youtube.com/vi/WFsAon_TWPQ/mqdefault.jpg" alt="Cover Img">
+        </div>
+        <h2 id="song-title">Music PLaying currently</h2>
+        <audio id="player">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <div class="time-div">
+            <p id="current-time">00:00</p>
+            <p id="total-time">10:00</p>
+
+        </div>
+    </div> -->
+</body>
+
+</html>
