@@ -13,10 +13,12 @@
         const params = new URLSearchParams(window.location.search);
         const songName = params.get('song');
         const songUrl = params.get('url');
+
         const decodedSongUrl = decodeURIComponent(songUrl);
 
         document.getElementById('song-name').textContent = songName;
         document.getElementById('audio-source').src = decodedSongUrl;
+
         document.getElementById('audio-player').load();
     </script>
 </body>
