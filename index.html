@@ -10,16 +10,13 @@
         Your browser does not support the audio element.
     </audio>
     <script>
-        // Get the song name and URL parameters from the query string
         const params = new URLSearchParams(window.location.search);
         const songName = params.get('song');
         const songUrl = params.get('url');
+        const decodedSongUrl = decodeURIComponent(songUrl);
 
-        // Set the song name and audio source
         document.getElementById('song-name').textContent = songName;
-        document.getElementById('audio-source').src = songUrl;
-
-        // Load the audio player with the new source
+        document.getElementById('audio-source').src = decodedSongUrl;
         document.getElementById('audio-player').load();
     </script>
 </body>
