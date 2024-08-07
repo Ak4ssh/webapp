@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Play Song</title>
+    <title>Music Player</title>
 </head>
 <body>
-    <h1>Now Playing: <span id="song-name"></span></h1>
-    <audio controls id="audio-player">
-        <source id="audio-source" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <h1>Music Player</h1>
+    <input type="text" id="song-url" placeholder="Enter song URL">
+    <button onclick="playSong()">Play</button>
+    <audio id="audio-player" controls></audio>
+
     <script>
-        const params = new URLSearchParams(window.location.search);
-        const songName = params.get('song');
-        const songUrl = params.get('url');
-
-        const decodedSongUrl = decodeURIComponent(songUrl);
-
-        document.getElementById('song-name').textContent = songName;
-        document.getElementById('audio-source').src = decodedSongUrl;
-
-        document.getElementById('audio-player').load();
+        function playSong() {
+            const url = document.getElementById('song-url').value;
+            const player = document.getElementById('audio-player');
+            player.src = url;
+            player.play();
+        }
     </script>
 </body>
 </html>
